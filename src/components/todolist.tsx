@@ -6,13 +6,16 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./todolist.css";
 import { styled } from "@mui/material/styles";
 import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
+import Checkbox from "@mui/material/Checkbox";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Accordion = styled((props: AccordionProps) => (
   <div>
     <MuiAccordion disableGutters elevation={0} square {...props} />
   </div>
 ))(({ theme }) => ({
-  border: `0px solid ${theme.palette.divider}`,
+  border: `1px solid ${theme.palette.divider}`,
   "&:not(:last-child)": {
     borderBottom: 0,
   },
@@ -20,6 +23,7 @@ const Accordion = styled((props: AccordionProps) => (
     display: "none",
   },
 }));
+
 export default function Todolist() {
   return (
     <div className="Todo">
@@ -32,11 +36,13 @@ export default function Todolist() {
           <Typography>buy 2 egg</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            buy 2 egg in supermarket
-          </Typography>
+          <Typography>buy 2 egg in supermarket</Typography>
         </AccordionDetails>
       </Accordion>
+      <Checkbox />
+      <IconButton>
+        <DeleteIcon />
+      </IconButton>
     </div>
   );
 }

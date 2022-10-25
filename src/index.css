@@ -27,3 +27,31 @@
   font-size: 50px;
   margin-top: 100px;
 }
+
+.addtodo {
+  text-align: center;
+  margin-top: 30%;
+}
+
+.newtodowrapper {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.newtodotitle {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.addbtnwrapper {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.newtodo{
+  display: block;
+}
+
+.newtodo:nth-child(2){
+  margin-left:3em;
+}
