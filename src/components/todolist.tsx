@@ -27,27 +27,30 @@ const Accordion = styled((props: AccordionProps) => (
 type Prop = {
   name: string;
   description: string;
+  id: number;
 };
 
 export default function Todolist(props: Prop) {
   return (
-    <div className="Todo">
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>{props.name}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>{props.description}</Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Checkbox />
-      <IconButton>
-        <DeleteIcon />
-      </IconButton>
+    <div>
+      <div className="Todo">
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{props.name}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>{props.description}</Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Checkbox />
+        <IconButton>
+          <DeleteIcon />
+        </IconButton>
+      </div>
     </div>
   );
 }
