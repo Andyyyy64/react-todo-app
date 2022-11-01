@@ -15,7 +15,7 @@ const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
   </div>
 ))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
+  border: `0px solid ${theme.palette.divider}`,
   "&:not(:last-child)": {
     borderBottom: 0,
   },
@@ -31,6 +31,7 @@ type Prop = {
 };
 
 export default function Todolist(props: Prop) {
+  console.log(props)
   return (
     <div>
       <div className="Todo">
@@ -47,7 +48,7 @@ export default function Todolist(props: Prop) {
           </AccordionDetails>
         </Accordion>
         <Checkbox />
-        <IconButton>
+        <IconButton >
           <DeleteIcon />
         </IconButton>
       </div>
