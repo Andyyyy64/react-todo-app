@@ -5,7 +5,7 @@ import Addtodo from "./components/addtodo";
 import { nanoid } from "nanoid";
 
 function App() {
-  
+
   interface Product {
     name: string;
     description: string;
@@ -20,7 +20,7 @@ function App() {
 
   console.log(tasks)//todolistデバック
 
-  const tasklist = TodoData.map((task) => (
+  const tasklist = tasks.map((task) => (
     <Todolist
       id={task.id}
       name={task.name}

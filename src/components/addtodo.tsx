@@ -17,6 +17,7 @@ export default function Addbtn(props) {
   function handleSubmit(e) {
     e.preventDefault();
     props.addTask(name, docs);
+    console.log(name,docs)
     setName("");
     setDocs("");
   }
