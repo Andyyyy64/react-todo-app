@@ -24,7 +24,12 @@ const Accordion = styled((props: AccordionProps) => (
   },
 }));
 
-export default function Todolist() {
+type Prop = {
+  name: string;
+  description: string;
+};
+
+export default function Todolist(props: Prop) {
   return (
     <div className="Todo">
       <Accordion>
@@ -33,10 +38,10 @@ export default function Todolist() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>buy 2 egg</Typography>
+          <Typography>{props.name}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>buy 2 egg in supermarket</Typography>
+          <Typography>{props.description}</Typography>
         </AccordionDetails>
       </Accordion>
       <Checkbox />
