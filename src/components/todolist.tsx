@@ -27,7 +27,7 @@ const Accordion = styled((props: AccordionProps) => (
 type Prop = {
   name: string;
   description: string;
-  id: number;
+  id: string;
 };
 
 export default function Todolist(props: Prop) {

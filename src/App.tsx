@@ -2,19 +2,24 @@ import * as React from "react";
 import "./App.css";
 import Todolist from "./components/todolist";
 import Addtodo from "./components/addtodo";
+import { nanoid } from "nanoid";
 
-const TodolistView = () => {
-
-interface Product {
+function App() {
+  
+  interface Product {
     name: string;
     description: string;
-    id: number;
+    id: string;
   }
 
   const TodoData: Product[] = [
-    { name: "egg", description: "buy 2 egg", id: 1 },
-    { name: "egg", description: "buy 2 egg", id: 1 },
+    { name: "egg", description: "asdf", id: "todo-1" },
   ];
+
+  const [tasks, setTasks] = React.useState(TodoData);
+
+  console.log(tasks)//todolistデバック
+
   const tasklist = TodoData.map((task) => (
     <Todolist
       id={task.id}
@@ -23,20 +28,17 @@ interface Product {
       key={task.id}
     />
   ));
-
-  return (
-    <div>
-      <h1 className="maintitle"># Todo List</h1>
-      {tasklist}
-    </div>
-  );
-};
-
-function App() {
+  function addTask(name: string, description: string) {
+    const newTask = { name, description, id: `todo-${nanoid()}` };
+    setTasks([...tasks, newTask]);
+  }
   return (
     <div className="App">
-      <TodolistView />
-      <Addtodo />
+      <div>
+        <h1 className="maintitle"># Todo List</h1>
+        {tasklist}
+      </div>
+      <Addtodo addTask={addTask} />
     </div>
   );
 }
