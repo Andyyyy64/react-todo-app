@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import AddIcon from "@mui/icons-material/Add";
 
-export default function Addbtn(props) {
+export default function AddTodo(props: any) {
   const [state, setState] = React.useState({
     bottomlay: false,
   });

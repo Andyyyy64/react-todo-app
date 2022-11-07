@@ -31,6 +31,11 @@
   text-align:end;
   margin-right: 25%;
 }
+.completedcounter{
+  color: black;
+  text-align:end;
+  margin-right: 25%;
+}
 .addtodo {
   text-align: center;
   margin-top: 3%;

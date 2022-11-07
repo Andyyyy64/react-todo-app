@@ -28,10 +28,11 @@ type Prop = {
   name: string;
   description: string;
   id: string;
+  completed: boolean;
+  isTaskcompleted: any;
 };
 
 export default function Todolist(props: Prop) {
-  console.log(props)
   return (
     <div>
       <div className="Todo">
@@ -47,8 +48,12 @@ export default function Todolist(props: Prop) {
             <Typography>{props.description}</Typography>
           </AccordionDetails>
         </Accordion>
-        <Checkbox />
-        <IconButton >
+        <Checkbox
+          id={props.id}
+          defaultChecked={props.completed}
+          onChange={() => props.isTaskcompleted(props.id)}
+        />
+        <IconButton>
           <DeleteIcon />
         </IconButton>
       </div>
