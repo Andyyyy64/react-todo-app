@@ -11,22 +11,23 @@ export default function AddTodo(props: any) {
     bottomlay: false,
   });
 
-  const [name, setName] = React.useState("");
-  const [docs, setDocs] = React.useState("");
+  const [name, setName] = React.useState("");//stateにnameという要素をもたせる
+  const [docs, setDocs] = React.useState("");//stateにdocs(description)という要素をもたせる
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.addTask(name, docs);
+    props.addTask(name, docs);//addtask関数にstateにあるnameとdocsを渡す
     setName("");
     setDocs("");
+    //初期値は両方空白
   }
 
-  function handleNameChange(e) {
-    setName(e.target.value);
+  function handleNameChange(e:any) {
+    setName(e.target.value);//stateにキーボードからの入力を保存させる
   }
 
-  function handleDocsChange(v) {
-    setDocs(v.target.value);
+  function handleDocsChange(v:any) {
+    setDocs(v.target.value);//stateにキーボードからの入力を保存させる
   }
 
   const toggle =
@@ -51,15 +52,15 @@ export default function AddTodo(props: any) {
             className="newtodo"
             id="outlined-required"
             label="todos name"
-            value={name}
-            onChange={handleNameChange}
+            value={name} //stateのnameをvalueに打ち込むことでイベントで扱えるようにする
+            onChange={handleNameChange}//イベントの反映
           />
           <TextField
             className="newtodo"
             id="outlined-required"
             label="description"
-            value={docs}
-            onChange={handleDocsChange}
+            value={docs}//stateのdocsをvalueに打ち込むことでイベントで扱えるようにする
+            onChange={handleDocsChange}//イベントに反映
           />
         </div>
         <div className="addbtnwrapper">
