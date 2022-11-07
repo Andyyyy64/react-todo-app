@@ -22,6 +22,7 @@ function App() {
       key={task.id}
       completed={task.completed}
       isTaskcompleted={isTaskcompleted}
+      deleteTask={deleteTask}
     />
   ));
 
@@ -52,6 +53,11 @@ function App() {
       return task;
     });
     setTasks(updatedTasks);
+  }
+
+  function deleteTask(id: string) {
+    const remainingTasks = tasks.filter((task) => id != task.id);
+    setTasks(remainingTasks);
   }
 
   function addTask(name: string, description: string) {

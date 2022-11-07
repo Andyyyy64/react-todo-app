@@ -30,6 +30,7 @@ type Prop = {
   id: string;
   completed: boolean;
   isTaskcompleted: any;
+  deleteTask: any;
 };
 
 export default function Todolist(props: Prop) {
@@ -53,7 +54,9 @@ export default function Todolist(props: Prop) {
           defaultChecked={props.completed}
           onChange={() => props.isTaskcompleted(props.id)}
         />
-        <IconButton>
+        <IconButton
+        onClick={() => props.deleteTask(props.id)}
+        >
           <DeleteIcon />
         </IconButton>
       </div>
