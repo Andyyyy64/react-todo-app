@@ -10,6 +10,7 @@
     "gen-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@graphql-codegen/cli": "^2.13.11",
