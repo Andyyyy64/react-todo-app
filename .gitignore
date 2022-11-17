@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+build
 dist-ssr
 *.local
 
@@ -26,6 +27,3 @@ dist-ssr
 
 #firebase
 .firebase
-.firebaserc
-firebase.json
-build
