@@ -1,7 +1,0 @@
-overwrite: true
-schema: "./schema.graphql"
-documents: "src/**/*.tsx"
-generates:
-  graphql-types.ts:
-    preset: "client"
-    plugins: []
