@@ -3,6 +3,8 @@ import "./App.css";
 import Todolist from "./components/todolist";
 import Addtodo from "./components/addtodo";
 import { nanoid } from "nanoid";
+import { useAuth0 } from "@auth0/auth0-react"
+import Button from "@mui/material/Button";
 
 function App() {
   interface Product {
@@ -13,6 +15,8 @@ function App() {
   }
 
   const [tasks, setTasks] = React.useState<Array<Product>>([]); //stateにtodolistとなる空の配列を持っておく
+
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0(); //auth0の関数を定義
 
   const tasklist = tasks.map((task) => (
     <Todolist
@@ -79,6 +83,16 @@ function App() {
   }
   return (
     <div className="App">
+      {!isAuthenticated ? (
+        <Button variant="contained" color="primary" onClick={loginWithRedirect}>Log in</Button>
+      ) : (
+        <Button variant="contained" color="error" onClick={() => {
+          logout({ returnTo: window.location.origin })
+        }}
+        >
+          Logout
+        </Button>
+      )}
       <div>
         <h1 className="maintitle"># Todo List</h1>
         <h2 className="remaintesk">{isTaskthere()}</h2>
