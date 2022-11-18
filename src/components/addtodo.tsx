@@ -26,8 +26,13 @@ export default function AddTodo(props: any) {
     setDocs(v.target.value);//stateにキーボードからの入力を保存させる
   }
 
+  function HandleTextError():boolean {
+    let Error
+    Error = name == "" ? true : false
+    return Error
+  }
+
   const toggle =
-  
     (anchor: string, isopen: boolean) =>
       (event: React.KeyboardEvent | React.MouseEvent) => {
         if (
@@ -46,6 +51,7 @@ export default function AddTodo(props: any) {
         <h1 className="newtodotitle"># new todo</h1>
         <div className="newtodowrapper">
           <TextField
+            error={HandleTextError()}
             className="newtodo"
             id="outlined-required"
             label="todos name"
@@ -62,6 +68,7 @@ export default function AddTodo(props: any) {
         </div>
         <div className="addbtnwrapper">
           <IconButton
+            disabled={HandleTextError()}
             type="submit"
             className="addbtn"
             onClick={toggle(anchor, false)}
